@@ -12,7 +12,7 @@ import template.GenXlsxToDocx;
 
 
 /*** Class designed to run project
-** @author Bohdan
+** @author gruppa
 */
 
 public class Launcher {
@@ -34,9 +34,13 @@ public class Launcher {
 				new GenXlsToDoc();
 			} else if (format.equals("xlsx")) {
 				new GenXlsxToDocx();
-			} else {
+				
+			} else if (format.equals("csv")) {
+				new GenCSVToDoc();
+				
+			}else {
 				log.launcherError();
-				throw new IllegalArgumentException("Error, please input 'xls' or 'xlsx'");
+				throw new IllegalArgumentException("Error, please input 'xls' or 'xlsx' or 'csv' ");
 			}
 	}
 
