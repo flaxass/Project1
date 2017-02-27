@@ -13,6 +13,7 @@ public class ServiceManager {
 
 	private XlsToDocService xlsToDocService;
 	private XlsxToDocxService xlsxToDocxService;
+	private CSVToDocService csvToDocService;
 	
 	/**
 	 * @return
@@ -26,6 +27,9 @@ public class ServiceManager {
 	public XlsxToDocxService getXlsxToDocxService(){
 		return xlsxToDocxService;
 	}
+	public CSVToDocService getCSVToDocService(){
+		return csvToDocService;
+	}
 	/**
 	 * Created service
 	 */
@@ -33,6 +37,7 @@ public class ServiceManager {
 		super();
 		xlsToDocService = (XlsToDocService) ServiceFactory.createService(new XlsToDocServiceImpl());
 		xlsxToDocxService = (XlsxToDocxService) ServiceFactory.createService(new XlsxToDocxServiceImpl());
+		csvToDocService = (CSVToDocService) ServiceFactory.createService(new CSVToDocServiceImpl());
 	}
 	/**
 	 * @return
